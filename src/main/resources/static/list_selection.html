@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style for the scrollable container */
+        .scrollable-container {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+        }
+
+        /* Style for the selected option */
+        .selected-option {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="scrollable-container">
+        <ul id="myList">
+            <li onclick="selectOption(this)">Option 1</li>
+            <li onclick="selectOption(this)">Option 2</li>
+            <li onclick="selectOption(this)">Option 3</li>
+	    <li onclick="selectOption(this)">Option 4</li>
+	    <li onclick="selectOption(this)">Option 41</li>
+	    <li onclick="selectOption(this)">Option 42</li>
+	    <li onclick="selectOption(this)">Option 43</li>
+	    <li onclick="selectOption(this)">Option 44</li>
+	    <li onclick="selectOption(this)">Option 45</li>
+	    <li onclick="selectOption(this)">Option 46</li>
+	    <li onclick="selectOption(this)">Option 47</li>
+	    <li onclick="selectOption(this)">Option 48</li>
+	    <li onclick="selectOption(this)">Option 49</li>
+            <!-- Add more options as needed -->
+        </ul>
+    </div>
+    <p id="selectedValue"></p>
+
+    <script>
+        function selectOption(liElement) {
+            const allOptions = document.querySelectorAll("#myList li");
+            allOptions.forEach(option => option.classList.remove("selected-option"));
+            liElement.classList.add("selected-option");
+            document.getElementById("selectedValue").textContent = `Selected value: ${liElement.textContent}`;
+        }
+    </script>
+</body>
+</html>
+
